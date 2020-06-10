@@ -8,7 +8,7 @@ module.exports = (passport) => {
         passwordField : 'password',
     }, async(email, password, done) => {
         try {
-            const exUser = await User.find({ where : { email }});
+            const exUser = await User.findOne({ where : { email }});
             if (exUser) {
                 //비밀번호 검사
                 const result = await bcrypt.compare(password, exUser.password);
