@@ -27,3 +27,4 @@ db.User.belongsToMany(db.Post, { through: 'Like'});
 db.Post.belongsToMany(db.User, { through: 'Like'});
 
 module.exports = db;
+
